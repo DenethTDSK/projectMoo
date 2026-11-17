@@ -1,0 +1,335 @@
+
+/* ==========================================
+   MOO - CUTE DESIGN ENHANCEMENTS
+   These styles do not change the main layout.
+========================================== */
+
+/* CUTE BRAND */
+
+.moo-brand {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+
+  background: #fffdf5;
+
+  box-shadow:
+    0 5px 0 rgba(76, 119, 77, 0.1),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.moo-brand__symbol {
+  position: relative;
+  isolation: isolate;
+
+  background: #e0f1d6;
+  color: #47704f;
+}
+
+/* Tiny decorative cow ears */
+
+.moo-brand__symbol::before,
+.moo-brand__symbol::after {
+  content: "";
+
+  position: absolute;
+  z-index: -1;
+
+  top: -5px;
+
+  width: 12px;
+  height: 15px;
+
+  background: #f1bac2;
+  border: 2px solid #a87879;
+
+  border-radius: 70% 25% 70% 25%;
+}
+
+.moo-brand__symbol::before {
+  left: -5px;
+  transform: rotate(-35deg);
+}
+
+.moo-brand__symbol::after {
+  right: -5px;
+  transform: rotate(35deg) scaleX(-1);
+}
+
+/* THEME BUTTON */
+
+.moo-theme-button {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+
+  box-shadow:
+    0 4px 0 rgba(54, 79, 50, 0.13);
+
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .moo-theme-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 6px 0 rgba(54, 79, 50, 0.13);
+  }
+}
+
+/* MOO'S SPEECH BUBBLE */
+
+.cow-stage__speech {
+  position: relative;
+
+  border: 2px solid #ffffff;
+  border-radius: 24px;
+
+  background: #fffdf7;
+
+  box-shadow:
+    0 5px 0 rgba(57, 89, 51, 0.12),
+    0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Little pointer toward Moo */
+
+.cow-stage__speech::before {
+  content: "";
+
+  position: absolute;
+
+  top: -7px;
+  left: 50%;
+
+  width: 13px;
+  height: 13px;
+
+  background: #fffdf7;
+
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* GENTLE COW SHADOW */
+
+.cow-stage__image {
+  filter: drop-shadow(
+    0 5px 5px rgba(32, 58, 28, 0.1)
+  );
+}
+
+/* CARE PANEL */
+
+.moo-panel {
+  position: relative;
+
+  border: 2px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 6px 0 rgba(58, 91, 51, 0.09),
+    0 12px 28px rgba(22, 54, 30, 0.11);
+}
+
+/* Heart decoration */
+
+.moo-panel__heart {
+  background: #ffe0e9;
+  color: #e57b9a;
+
+  border: 2px solid #fff5f8;
+
+  box-shadow:
+    0 3px 0 rgba(225, 120, 150, 0.13);
+
+  transition: transform 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .moo-panel__heart:hover {
+    transform: rotate(-12deg) scale(1.08);
+  }
+}
+
+/* STATUS BARS */
+
+.stat-meter__track {
+  border: 1px solid rgba(85, 100, 72, 0.09);
+
+  background: #e8eadf;
+
+  box-shadow:
+    inset 0 2px 3px rgba(0, 0, 0, 0.04);
+}
+
+.stat-meter__fill {
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.24),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.stat-meter__label {
+  letter-spacing: 0.01em;
+}
+
+/* CUTE ACTION BUTTONS */
+
+.action-button {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 2px solid rgba(88, 89, 70, 0.09);
+
+  background-image: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.42),
+    rgba(255, 255, 255, 0)
+  );
+
+  box-shadow:
+    0 4px 0 rgba(75, 85, 64, 0.09);
+
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+/* Tiny decorative sparkle */
+
+.action-button::after {
+  content: "✦";
+
+  position: absolute;
+
+  top: 7px;
+  right: 10px;
+
+  color: rgba(138, 107, 90, 0.34);
+
+  font-size: 14px;
+
+  pointer-events: none;
+}
+
+/* Keep your hand-drawn icons prominent */
+
+.action-button__icon {
+  position: relative;
+  z-index: 1;
+
+  filter: drop-shadow(
+    0 3px 2px rgba(0, 0, 0, 0.07)
+  );
+}
+
+.action-button__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual button borders */
+
+.action-button--feed {
+  border-color: #f0d6b6;
+}
+
+.action-button--pet {
+  border-color: #f0c5d1;
+}
+
+.action-button--play {
+  border-color: #c5dfef;
+}
+
+.action-button--sleep {
+  border-color: #d9cbf1;
+}
+
+/* Interactive effects */
+
+@media (hover: hover) and (pointer: fine) {
+  .action-button:not(:disabled):hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+      0 7px 0 rgba(75, 85, 64, 0.1),
+      0 9px 18px rgba(0, 0, 0, 0.07);
+  }
+
+  .action-button:not(:disabled):hover
+  .action-button__icon {
+    transform: rotate(-5deg) scale(1.06);
+  }
+}
+
+.action-button__icon {
+  transition: transform 150ms ease;
+}
+
+.action-button:not(:disabled):active {
+  transform: translateY(2px) scale(0.98);
+
+  box-shadow:
+    0 1px 0 rgba(75, 85, 64, 0.1);
+}
+
+/* NIGHT MODE */
+
+.moo-app--dark .moo-panel {
+  border-color: rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 6px 0 rgba(0, 0, 0, 0.18),
+    0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.moo-app--dark .stat-meter__track {
+  background: #43534b;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.moo-app--dark .moo-footer p {
+  text-shadow: 0 2px 5px #000000;
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 600px) {
+  .moo-brand {
+    border-width: 1px;
+  }
+
+  .moo-panel {
+    border-width: 1px;
+  }
+
+  .action-button {
+    box-shadow:
+      0 3px 0 rgba(75, 85, 64, 0.09);
+  }
+
+  .action-button::after {
+    top: 4px;
+    right: 5px;
+    font-size: 10px;
+  }
+
+  .cow-stage__speech {
+    border-radius: 19px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .moo-theme-button,
+  .moo-panel__heart,
+  .action-button,
+  .action-button__icon {
+    transition: none;
+  }
+}

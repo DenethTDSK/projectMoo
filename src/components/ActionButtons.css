@@ -1,0 +1,147 @@
+
+/* src/components/ActionButtons.css */
+
+.action-buttons {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: clamp(4px, 0.8vw, 10px);
+
+  width: 100%;
+  min-width: 0;
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 4px;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 106px;
+
+  padding: 7px 3px;
+
+  border: 2px solid rgba(72, 75, 55, 0.08);
+  border-radius: 15px;
+
+  color: #344034;
+
+  font-size: 0.86rem;
+  font-weight: 800;
+
+  cursor: pointer;
+  touch-action: manipulation;
+
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+/* Artwork */
+
+.action-button__icon {
+  display: block;
+
+  width: min(78px, 90%);
+  height: 73px;
+  max-width: 100%;
+
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.action-button__label {
+  text-align: center;
+}
+
+/* Individual colors */
+
+.action-button--feed {
+  background: #fff0da;
+}
+
+.action-button--pet {
+  background: #ffe6ed;
+}
+
+.action-button--play {
+  background: #e0f1ff;
+}
+
+.action-button--sleep {
+  background: #eee7ff;
+}
+
+/* Desktop hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .action-button:not(:disabled):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.action-button:not(:disabled):active {
+  transform: scale(0.97);
+}
+
+.action-button:focus-visible {
+  outline: 3px solid #4f8a66;
+  outline-offset: 2px;
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .action-button {
+    min-height: 78px;
+    padding: 5px 2px;
+
+    border-radius: 12px;
+    font-size: 0.72rem;
+  }
+
+  .action-button__icon {
+    width: min(56px, 90%);
+    height: 48px;
+  }
+}
+
+/* Narrow phones */
+
+@media (max-width: 340px) {
+  .action-buttons {
+    gap: 4px;
+  }
+
+  .action-button {
+    min-height: 73px;
+    font-size: 0.65rem;
+  }
+
+  .action-button__icon {
+    width: min(45px, 90%);
+    height: 40px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .action-button {
+    transition: none;
+  }
+}
